@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FrmGastosComponent {
   @Input() gastoParaEditar: Igastos | null = null;
+
   @Output() gastoAgregado = new EventEmitter<Igastos>();
   @Output() editame = new EventEmitter<Igastos>();
 

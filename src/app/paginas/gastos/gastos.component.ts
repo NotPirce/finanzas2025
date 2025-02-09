@@ -6,6 +6,7 @@ import { ListadoGastosComponent } from '../../componentes/gastos/listado-gastos/
 
 @Component({
   selector: 'app-gastos',
+  standalone: true,
   imports: [FrmGastosComponent, ListadoGastosComponent],
   templateUrl: './gastos.component.html',
   styleUrls: ['./gastos.component.css'],
@@ -20,17 +21,14 @@ export class GastosComponent {
     this.gastoServicio.agregarGasto({ ...gasto });
     this.gastos.set(this.gastoServicio.getGastos());
   }
-
   editandolo(gastoEditado: Igastos) {
     this.gastoServicio.actualizarGasto(gastoEditado);
     this.gastos.set(this.gastoServicio.getGastos());
   }
-
   eliminaGasto(id: string) {
-    this.gastoServicio.eliminar(id);
+    this.gastoServicio.eliminarGasto(id);
     this.gastos.set(this.gastoServicio.getGastos());
   }
-
   seleccionGasto(gasto: Igastos) {
     this.gastoParaEditar.set(gasto);
   }

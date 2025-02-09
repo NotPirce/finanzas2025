@@ -52,6 +52,7 @@ export class DbService {
       : '1';
     const aux = { ...gasto, id };
     const aux2 = [...DbService.gastos(), aux];
+    DbService.gastos.set(aux2);
   }
 
   eliminarGasto(id: string) {
