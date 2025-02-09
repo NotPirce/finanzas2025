@@ -1,0 +1,79 @@
+<div class="container">
+  <form (ngSubmit)="agregarGasto()">
+    <div class="mb-3 row">
+      <label for="id" class="col-4 col-form-label">ID:</label>
+      <div class="col-8">
+        <input
+          type="text"
+          class="form-control"
+          name="id"
+          id="id"
+          placeholder="ID"
+          [(ngModel)]="nuevoGasto.id"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="ingresoId" class="col-4 col-form-label">Ingreso ID:</label>
+      <div class="col-8">
+        <input
+          type="text"
+          class="form-control"
+          name="ingresoId"
+          id="ingresoId"
+          placeholder="Id del ingreso"
+          [(ngModel)]="nuevoGasto.ingresoId"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="monto" class="col-4 col-form-label">Monto:</label>
+      <div class="col-8">
+        <input
+          type="number"
+          class="form-control"
+          name="monto"
+          id="monto"
+          [(ngModel)]="nuevoGasto.monto"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="descripcion" class="col-4 col-form-label">Descripcion:</label>
+      <div class="col-8">
+        <input
+          type="text"
+          class="form-control"
+          name="descripcion"
+          id="descripcion"
+          placeholder="Descripcion"
+          [(ngModel)]="nuevoGasto.descripcion"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="fecha" class="col-4 col-form-label">Fecha:</label>
+      <div class="col-8">
+        <input
+          type="date"
+          class="form-control"
+          name="fecha"
+          id="fecha"
+          [(ngModel)]="nuevoGasto.fecha"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <div class="offset-sm-4 col-sm-8">
+        <button type="submit" class="btn btn-primary">
+          {{ gastoParaEditar ? "Actualizar gasto" : "Agregar gasto" }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
